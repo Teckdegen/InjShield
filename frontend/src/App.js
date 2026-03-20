@@ -285,7 +285,8 @@ export default function App({ wcEnabled }) {
     try {
       busy("send", true);
       await sendNativeINJ(signer, recipient, String(amt));
-      setPublicBals((p) => ({ ...p, [NATIVE]: await fetchNativeBalance(address, walletProvider) }));
+      const newNativeBal = await fetchNativeBalance(address, walletProvider);
+      setPublicBals((p) => ({ ...p, [NATIVE]: newNativeBal }));
       setAmount(""); setRecipient(""); setPanel(null);
       playSend();
       toast.success(`Sent ${amt} INJ`);
