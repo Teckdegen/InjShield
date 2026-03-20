@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+frontend/node_modules/
+relayer/node_modules/
+
+# Environment — NEVER commit private keys
+.env
+.env.local
+.env.production
+frontend/.env
+frontend/.env.local
+frontend/.env.production
+
+# Hardhat
+cache/
+artifacts/
+
+# React build
+frontend/build/
+
+# Misc
+.DS_Store
+*.log
+npm-debug.log*
+.claude/
